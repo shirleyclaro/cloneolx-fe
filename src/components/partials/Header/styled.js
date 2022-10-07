@@ -30,9 +30,9 @@ export const HeaderArea = styled.div`
             font-weight: bold;
         }
 
-        .logo-1{ color: #00ff00;}
-        .logo-2{ color: #0080ff;}
-        .logo-3{ color: #ff0080;}
+        .logo-1{ color: #800080;}
+        .logo-2{ color: #9bb830;}
+        .logo-3{ color: #FF9500;}
 
         nav{
             padding-top: 10px;
