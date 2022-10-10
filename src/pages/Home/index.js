@@ -2,6 +2,7 @@ import React, {useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { PageArea, SearchArea } from './styled';
 import { PageContainer, ErrorMessage } from '../../components/MainComponents';
+import AdItem from '../../components/partials/AdItem';
 import useApi from '../../helpers/OlxAPI';
 
 
@@ -10,6 +11,7 @@ const Page = () => {
 
     const [stateList, setStateList] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [adList, setAdList] = useState ([]);
 
     useEffect(() => {
         const getStates = async () => {
@@ -26,6 +28,18 @@ const Page = () => {
         }
         getCategories();
     }, []);
+
+    useEffect(() => { 
+        const getRecentAds = async () => {
+            const json = await api.getAds({
+               sort: 'desc',
+               limit: 8 
+            });
+            setAdList(json.ads);
+        }
+        getRecentAds();
+    }, []);
+
 
     return (
         <>
@@ -64,7 +78,19 @@ const Page = () => {
             </SearchArea>
             <PageContainer>
                 <PageArea>
-                    ...
+                    <h2>Anúncios Recentes</h2>
+                    <div className="list">
+                        {adList.map((i,k)=> 
+                            <AdItem key={k} data={i} />
+                        )}
+                    </div>
+                    <Link to="/ads" className="seeAllLink"> Ver todos</Link>
+                    <hr />
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Sed tristique nulla eros, sit amet elementum magna consectetur et. Nulla nisl felis, molestie sollicitudin justo et, suscipit accumsan turpis. 
+                    Sed ac odio in elit elementum tempor. Aliquam aliquet enim quis porta lacinia. 
+                    Vivamus varius mattis ante, fermentum ultrices nisl porttitor non. 
+                    Integer malesuada velit quis risus sodales facilisis. Duis fringilla felis non magna lacinia luctus.
                 </PageArea>
             </PageContainer>
         </>
