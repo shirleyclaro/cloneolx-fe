@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route} from 'react-router-dom';
+import { Switch, Route} from 'react-router-dom';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -10,13 +10,25 @@ import AdPage from './pages/AdPage';
 
 export default () => {
     return (
-        <Routes>
-            <Route exact path="/" element={<Home />}/>
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/signin" element={<SignIn/>}/>
-            <Route exact path="/signup" element={<SignUp/>}/>
-            <Route exact path="/ad/:id" element={<AdPage/>}/>
-            <Route path="*" element={<NotFound/>} />    
-        </Routes>
+        <Switch>
+            <Route exact path="/">
+                <Home />
+            </Route>
+            <Route exact path="/about">
+                <About />
+            </Route>
+            <Route exact path="/signin">
+                <SignIn />
+            </Route>
+            <Route exact path="/signup">
+                <SignUp />
+            </Route>
+            <Route exact path="/ad/:id">
+                <AdPage />
+            </Route>
+            <Route exact path="*">
+                <NotFound />
+            </Route>
+        </Switch>
     )
 }

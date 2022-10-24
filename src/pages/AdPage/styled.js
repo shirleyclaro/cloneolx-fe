@@ -25,19 +25,47 @@ export const PageArea = styled.div`
         flex: 1;
         margin-right: 20px;
 
+        .box {
+            display: flex;
+        }
+
         .adImage {
+            width: 320px;
+            height: 320px;
+            margin-right: 20px;
+
+            .each-slide {
+                display: flex;
+                align-items:  center;
+                justify-content: center;
+                background-size: cover;
+                height: 320px;
+            }
 
         }
 
         .adInfo {
             padding: 10px;
+            flex: 1
         }
 
         .adName {
             margin-bottom: 10px;
+
+            h2 {
+                margin: 0;
+                margin-top: 20px;  
+            }
+
+            small {
+                color: #999;
+            }
         }
 
         .adDescription {
+            small {
+                color: #999;
+            }
 
         }
     }
