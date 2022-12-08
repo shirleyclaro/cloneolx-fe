@@ -72,6 +72,36 @@ export const PageArea = styled.div`
 
     .rightSide {
         width: 250px;
+
+        .price span {
+            color: #0000FF;
+            display: block;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .contactSellerLink {
+            background-color:#0000FF;
+            color: #FFF;
+            height: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 4px #999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+
+        .createBy strong {
+            display: block;
+        }
+
+        .createBy small {
+            display: block;
+            color: #999;
+            margin-top: 10px;
+        }
     }
 
 `;

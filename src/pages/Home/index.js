@@ -6,6 +6,7 @@ import AdItem from '../../components/partials/AdItem';
 import useApi from '../../helpers/OlxAPI';
 
 
+
 const Page = () => {
     const api = useApi();
 
@@ -23,7 +24,7 @@ const Page = () => {
 
     useEffect(() => {
         const getCategories = async () => {
-            const cats = await api.getCategorias();
+            const cats = await api.getCategories();
             setCategories(cats);
         }
         getCategories();
